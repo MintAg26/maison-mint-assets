@@ -1,10 +1,9 @@
 class SeoMarquee extends HTMLElement {
   connectedCallback() {
-    // Shadow DOM for encapsulated styling
     const shadow = this.attachShadow({ mode: 'open' });
     
-    // Keywords array - easy to edit
-    const keywords = [
+    // Row 1 keywords
+    const keywords1 = [
       'Turundusagentuur Tallinn',
       'Digiturunduse Agentuur',
       'Google Ads Haldus',
@@ -14,7 +13,11 @@ class SeoMarquee extends HTMLElement {
       'Sotsiaalmeedia Haldus',
       'SEO Optimeerimine',
       'E-poe Haldus',
-      'Sisuloome',
+      'Sisuloome'
+    ];
+    
+    // Row 2 keywords
+    const keywords2 = [
       'E-maili Turundus',
       'Performance Marketing',
       'Digiagentuur Eesti',
@@ -27,12 +30,14 @@ class SeoMarquee extends HTMLElement {
       'Sotsiaalmeedia Sisuloome'
     ];
     
-    // Generate keyword HTML
-    const keywordHTML = keywords.map(kw => 
+    const keywordHTML1 = keywords1.map(kw => 
       `<span class="kw">${kw}</span><span class="sep">//</span>`
     ).join('');
     
-    // Create the component
+    const keywordHTML2 = keywords2.map(kw => 
+      `<span class="kw">${kw}</span><span class="sep">//</span>`
+    ).join('');
+    
     shadow.innerHTML = `
       <style>
         :host {
@@ -61,18 +66,30 @@ class SeoMarquee extends HTMLElement {
         .marquee-section {
           background: #FF0044;
           overflow: hidden;
-          padding: 18px 0;
+          padding: 12px 0;
           position: relative;
           width: 100%;
+        }
+        
+        .row {
+          overflow: hidden;
+          margin: 6px 0;
         }
         
         .marquee-wrapper {
           display: flex;
           width: max-content;
-          animation: marquee 45s linear infinite;
+          animation: marquee 40s linear infinite;
         }
         
-        .marquee-section:hover .marquee-wrapper {
+        .marquee-wrapper-reverse {
+          display: flex;
+          width: max-content;
+          animation: marqueeReverse 40s linear infinite;
+        }
+        
+        .marquee-section:hover .marquee-wrapper,
+        .marquee-section:hover .marquee-wrapper-reverse {
           animation-play-state: paused;
         }
         
@@ -83,7 +100,7 @@ class SeoMarquee extends HTMLElement {
         
         .kw {
           font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-          font-size: clamp(1.5rem, 4vw, 2.2rem);
+          font-size: clamp(1.1rem, 2.5vw, 1.5rem);
           font-weight: 700;
           color: white;
           text-transform: uppercase;
@@ -94,9 +111,9 @@ class SeoMarquee extends HTMLElement {
         
         .sep {
           font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-          font-size: clamp(1.5rem, 4vw, 2.2rem);
+          font-size: clamp(1.1rem, 2.5vw, 1.5rem);
           font-weight: 300;
-          color: rgba(255, 255, 255, 0.7);
+          color: rgba(255, 255, 255, 0.5);
           padding: 0 0.2em;
         }
         
@@ -105,8 +122,14 @@ class SeoMarquee extends HTMLElement {
           100% { transform: translateX(-50%); }
         }
         
+        @keyframes marqueeReverse {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+        
         @media (prefers-reduced-motion: reduce) {
-          .marquee-wrapper {
+          .marquee-wrapper,
+          .marquee-wrapper-reverse {
             animation: none;
           }
         }
@@ -114,14 +137,23 @@ class SeoMarquee extends HTMLElement {
       
       <section class="marquee-section" aria-label="Maison Mint digiturunduse teenused">
         <h2 class="sr-only">Maison Mint Digiturunduse Agentuur Teenused: Turundusagentuur Tallinn, Google Ads Haldus, Meta Reklaamid, Facebook Turundus, Instagram Turundus, Sotsiaalmeedia Haldus, SEO Optimeerimine, E-poe Haldus, Sisuloome, E-maili Turundus, Performance Marketing, Digiagentuur Eesti, Bränding, Reklaamikampaaniad, PPC Haldus</h2>
-        <div class="marquee-wrapper">
-          <div class="marquee-content">${keywordHTML}</div>
-          <div class="marquee-content" aria-hidden="true">${keywordHTML}</div>
+        
+        <div class="row">
+          <div class="marquee-wrapper">
+            <div class="marquee-content">${keywordHTML1}</div>
+            <div class="marquee-content" aria-hidden="true">${keywordHTML1}</div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="marquee-wrapper-reverse">
+            <div class="marquee-content">${keywordHTML2}</div>
+            <div class="marquee-content" aria-hidden="true">${keywordHTML2}</div>
+          </div>
         </div>
       </section>
     `;
   }
 }
 
-// Register the custom element
 customElements.define('seo-marquee', SeoMarquee);
