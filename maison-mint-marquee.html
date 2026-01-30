@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison Mint - Turundusagentuur Tallinn</title>
+    
+    <!-- SEO TRIKK #1: Preconnect fontidele kiirema laadimise jaoks -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- SEO TRIKK #2: Schema.org JSON-LD - Google loeb seda VÄGA hästi -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "@id": "https://www.mintagency.eu/#organization",
+        "name": "Maison Mint",
+        "alternateName": "Maison Mint Agentuur",
+        "url": "https://www.mintagency.eu",
+        "logo": "https://www.mintagency.eu/logo.png",
+        "description": "Digiturunduse agentuur Tallinnas. Pakume Google Ads haldust, Meta reklaame, sotsiaalmeedia haldust, SEO optimeerimist ja sisuloome teenuseid.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tallinn",
+            "addressCountry": "EE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "59.4370",
+            "longitude": "24.7536"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "Estonia"
+        },
+        "priceRange": "€€",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Digiturunduse teenused",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Google Ads Haldus",
+                        "description": "Professionaalne Google Ads kampaaniate loomine ja optimeerimine"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Meta Reklaamid",
+                        "description": "Facebook ja Instagram reklaamikampaaniate haldus"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Sotsiaalmeedia Haldus",
+                        "description": "Sotsiaalmeedia sisuloome ja kontode haldamine"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "SEO Optimeerimine",
+                        "description": "Otsingumootori optimeerimine ja orgaaniline nähtavus"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "E-poe Haldus",
+                        "description": "Shopify ja WooCommerce e-poodide haldamine"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "E-maili Turundus",
+                        "description": "E-posti kampaaniad ja automatiseerimine"
+                    }
+                }
+            ]
+        },
+        "knowsAbout": [
+            "Digiturundus",
+            "Google Ads",
+            "Meta reklaamid",
+            "Facebook turundus",
+            "Instagram turundus",
+            "SEO",
+            "Sotsiaalmeedia haldus",
+            "Performance marketing",
+            "E-poe haldus",
+            "Sisuloome",
+            "PPC",
+            "Bränding"
+        ],
+        "slogan": "Keeping your online presence in MINT condition"
+    }
+    </script>
+
+    <style>
+        /* ============================================
+           MAISON MINT - SEO MARQUEE STYLES
+           ============================================ */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* SEO TRIKK #3: Varjatud pealkiri ekraanilugejatele ja Google'ile */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Põhikonteiner */
+        .marquee-section {
+            background: #FF0044;
+            overflow: hidden;
+            padding: 18px 0;
+            position: relative;
+            /* SEO TRIKK #4: Will-change parandab performance */
+            will-change: transform;
+        }
+
+        /* Animatsiooni wrapper */
+        .marquee-wrapper {
+            display: flex;
+            width: max-content;
+            animation: marquee 45s linear infinite;
+        }
+
+        /* Hover peatab animatsiooni - UX boonus */
+        .marquee-section:hover .marquee-wrapper {
+            animation-play-state: paused;
+        }
+
+        /* Üksik keyword grupp */
+        .marquee-content {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            padding-right: 0;
+        }
+
+        /* Keyword styling */
+        .marquee-keyword {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+            padding: 0 0.4em;
+            /* SEO TRIKK #5: Tekst jääb valitavaks */
+            user-select: text;
+            -webkit-user-select: text;
+        }
+
+        /* Eraldaja styling */
+        .marquee-separator {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0 0.2em;
+        }
+
+        /* Smooth infinite scroll animation */
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Reduced motion - ligipääsetavus */
+        @media (prefers-reduced-motion: reduce) {
+            .marquee-wrapper {
+                animation: none;
+            }
+        }
+
+        /* ============================================
+           BONUS: Subtle gradient edges (optional)
+           ============================================ */
+        .marquee-section::before,
+        .marquee-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 50px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        
+        .marquee-section::before {
+            left: 0;
+            background: linear-gradient(to right, #FF0044 0%, transparent 100%);
+        }
+        
+        .marquee-section::after {
+            right: 0;
+            background: linear-gradient(to left, #FF0044 0%, transparent 100%);
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============================================
+     SEO MARQUEE - MAISON MINT
+     
+     SEO TRIKID SELLES KOODIS:
+     1. Schema.org JSON-LD (ProfessionalService + OfferCatalog)
+     2. Semantic HTML (<section>, <nav>, <ul>)
+     3. Varjatud <h2> Google jaoks
+     4. aria-label ligipääsetavuseks
+     5. itemprop atribuudid mikrodata jaoks
+     6. Päris HTML tekst (mitte pilt/video)
+     7. Prefers-reduced-motion tugi
+     ============================================ -->
+
+<section 
+    class="marquee-section" 
+    aria-label="Maison Mint digiturunduse teenused"
+    itemscope 
+    itemtype="https://schema.org/ItemList"
+>
+    <!-- SEO TRIKK #6: Varjatud pealkiri - Google näeb, kasutaja ei näe -->
+    <h2 class="sr-only">Maison Mint Digiturunduse Agentuur Teenused: Turundusagentuur Tallinn, Google Ads Haldus, Meta Reklaamid, Facebook Turundus, Instagram Turundus, Sotsiaalmeedia Haldus, SEO Optimeerimine, E-poe Haldus, Sisuloome, E-maili Turundus, Performance Marketing, Digiagentuur Eesti</h2>
+    
+    <meta itemprop="numberOfItems" content="20">
+    
+    <div class="marquee-wrapper" role="marquee" aria-live="off">
+        <!-- Esimene koopia -->
+        <div class="marquee-content">
+            <span class="marquee-keyword" itemprop="itemListElement">Turundusagentuur Tallinn</span>
+            <span class="marquee-separator" aria-hidden="true">//</span>
+            <span class="marquee-keyword" itemprop="itemListElement">Digiturunduse Agentuur</span>
+            <span class="marquee-separator" aria-hidden="true">//</span>
+            <span class="marquee-keyword" itemprop="itemListElement">Google Ads Haldus</span>
+            <span class="marquee-separator" aria-hidden="true">//</span>
+            <span class="marquee-keyword" itemprop="itemListElement">Meta Reklaamid</span>
+            <span class="marquee-separator" aria-hidden="true">//</span>
+            <span class="marquee-keyword" itemprop="itemListElement">Facebook Turundus</span>
+            <span class="marquee-separator" aria-hidden="true">//</span>
+            <span class="marquee-keyword" itemprop="itemListElement">Instagram Turundus</span>
+            <span class="marquee-separator" aria-hidden="true">//</span>
+            <span class="marquee-keyword" itemprop="itemListElement">Sotsiaalmeedia Haldus</span>
+            <span class="marquee-separator" aria-hidden="true">//</span>
+            <span class="marquee-keyword" itemprop="itemListElement">SEO Optimeerimine</span>
+            <span class="marquee-separator" aria-hidden="true">//</span>
+            <span class="marquee-keyword" itemprop="itemListElement">E-poe Haldus</span>
+            <span class="marquee-separator" aria-hidden="true">//</span>
+            <span class="marquee-keyword" itemprop="itemListElement">Sisuloome</span>
+            <span class="marquee-separator" aria-hidden="true">//</span>
+            <span class="marquee-keyword" itemprop="itemListElement">E-maili Turundus</span>
+            <span class="marquee-separator" aria-hidden="true">//</span>
+            <span class="marquee-keyword" itemprop="itemListElement">Performance Marketing</span>
+            <span class="marquee-separator" aria-hidden="true">//</span>
+            <span class="marquee-keyword" itemprop="itemListElement">Digiagentuur Eesti</span>
+            <span class="marquee-separator" aria-hidden="true">//</span>
+            <span class="marquee-keyword" itemprop="itemListElement">Bränding</span>
+            <span class="marquee-separator" aria-hidden="true">//</span>
+            <span class="marquee-keyword" itemprop="itemListElement">Reklaamikampaaniad</span>
+            <span class="marquee-separator" aria-hidden="true">//</span>
+            <span class="marquee-keyword" itemprop="itemListElement">Turunduse Juhtimine</span>
+            <span class="marquee-separator" aria-hidden="true">//</span>
+            <span class="marquee-keyword" itemprop="itemListElement">Shopify E-poe Haldus</span>
+            <span class="marquee-separator" aria-hidden="true">//</span>
+            <span class="marquee-keyword" itemprop="itemListElement">Google Reklaamid</span>
+            <span class="marquee-separator" aria-hidden="true">//</span>
+            <span class="marquee-keyword" itemprop="itemListElement">PPC Haldus</span>
+            <span class="marquee-separator" aria-hidden="true">//</span>
+            <span class="marquee-keyword" itemprop="itemListElement">Sotsiaalmeedia Sisuloome</span>
+            <span class="marquee-separator" aria-hidden="true">//</span>
+        </div>
+        
+        <!-- Teine koopia (seamless loop jaoks) -->
+        <div class="marquee-content" aria-hidden="true">
+            <span class="marquee-keyword">Turundusagentuur Tallinn</span>
+            <span class="marquee-separator">//</span>
+            <span class="marquee-keyword">Digiturunduse Agentuur</span>
+            <span class="marquee-separator">//</span>
+            <span class="marquee-keyword">Google Ads Haldus</span>
+            <span class="marquee-separator">//</span>
+            <span class="marquee-keyword">Meta Reklaamid</span>
+            <span class="marquee-separator">//</span>
+            <span class="marquee-keyword">Facebook Turundus</span>
+            <span class="marquee-separator">//</span>
+            <span class="marquee-keyword">Instagram Turundus</span>
+            <span class="marquee-separator">//</span>
+            <span class="marquee-keyword">Sotsiaalmeedia Haldus</span>
+            <span class="marquee-separator">//</span>
+            <span class="marquee-keyword">SEO Optimeerimine</span>
+            <span class="marquee-separator">//</span>
+            <span class="marquee-keyword">E-poe Haldus</span>
+            <span class="marquee-separator">//</span>
+            <span class="marquee-keyword">Sisuloome</span>
+            <span class="marquee-separator">//</span>
+            <span class="marquee-keyword">E-maili Turundus</span>
+            <span class="marquee-separator">//</span>
+            <span class="marquee-keyword">Performance Marketing</span>
+            <span class="marquee-separator">//</span>
+            <span class="marquee-keyword">Digiagentuur Eesti</span>
+            <span class="marquee-separator">//</span>
+            <span class="marquee-keyword">Bränding</span>
+            <span class="marquee-separator">//</span>
+            <span class="marquee-keyword">Reklaamikampaaniad</span>
+            <span class="marquee-separator">//</span>
+            <span class="marquee-keyword">Turunduse Juhtimine</span>
+            <span class="marquee-separator">//</span>
+            <span class="marquee-keyword">Shopify E-poe Haldus</span>
+            <span class="marquee-separator">//</span>
+            <span class="marquee-keyword">Google Reklaamid</span>
+            <span class="marquee-separator">//</span>
+            <span class="marquee-keyword">PPC Haldus</span>
+            <span class="marquee-separator">//</span>
+            <span class="marquee-keyword">Sotsiaalmeedia Sisuloome</span>
+            <span class="marquee-separator">//</span>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     ALTERNATIIVNE: AINULT MARQUEE KUI EMBED
+     (Kui tahad ainult marquee osa ilma schema'ta)
+     Kopeeri ainult <section>...</section> ja <style>...</style>
+     ============================================ -->
+
+</body>
+</html>
